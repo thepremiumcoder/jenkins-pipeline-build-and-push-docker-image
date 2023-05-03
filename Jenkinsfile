@@ -12,7 +12,7 @@ pipeline {
         }
         stage('Build Image') {
             steps {
-		sh 'docker build -t thepremiumcoder/jenkins-docker-demo:$BUILD_NUMBER'
+		sh 'docker build -t thepremiumcoder/jenkins-docker-demo:$BUILD_NUMBER .'
             }
         }
         stage('Docker Login') {
