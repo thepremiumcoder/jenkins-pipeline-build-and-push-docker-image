@@ -12,8 +12,7 @@ pipeline {
         }
         stage('Build Image') {
             steps {
-                //sh 'docker build -t raj80dockerid/jenkinstest ./pushdockerimage/' (this will use the tag latest)
-		sh 'docker build -t raj80dockerid/jenkinstest:$BUILD_NUMBER ./pushdockerimage/'
+		sh 'docker build -t thepremiumcoder/jenkins-docker-demo:$BUILD_NUMBER'
             }
         }
         stage('Docker Login') {
@@ -24,8 +23,8 @@ pipeline {
             }
         stage('Docker Push') {
             steps {
-		//sh 'docker push raj80dockerid/jenkinstest' (this will use the tag latest)    
-                sh 'docker push raj80dockerid/jenkinstest:$BUILD_NUMBER'
+		//sh 'docker push thepremiumcoder/jenkins-docker-demo' (this will use the tag latest)    
+                sh 'docker push thepremiumcoder/jenkins-docker-demo:$BUILD_NUMBER'
                 }
             }
         }
